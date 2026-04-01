@@ -1,31 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORE ASSET</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORE ASSET — Private Label Rights & Master Resell Rights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --card: #161616;
+    --border: #252525;
+    --accent: #ffffff;
+    --accent-blue: #3b82f6;
+    --text: #ffffff;
+    --muted: #a0a0a0;
+    --font-head: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    margin: 0;
+  }
+
+  /* ─── HEADER ─── */
+  .top-notice {
+    background: var(--accent-blue);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: var(--font-head);
+    font-size: 2.2rem;
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: 1px;
+  }
+
+  .search-container {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 2rem;
+  }
+
+  .search-container input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  /* ─── LAYOUT ─── */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 2rem 4rem;
+  }
+
+  /* ─── SIDEBAR (PLRProducts style) ─── */
+  .sidebar h3 {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .cat-list { list-style: none; padding: 0; }
+  .cat-list li { margin-bottom: 8px; }
+  .cat-list a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .cat-list a:hover { color: var(--accent-blue); }
+
+  /* ─── HERO ─── */
+  .hero-banner {
+    background: linear-gradient(to right, #1a1a1a, #111);
+    padding: 3rem;
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .hero-banner h1 {
+    font-family: var(--font-head);
+    font-size: 4rem;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .hero-banner p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 1rem 0 2rem;
+  }
+
+  /* ─── PRODUCT GRID ─── */
+  .section-title {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 10px;
+    transition: transform 0.2s;
+    position: relative;
+  }
+
+  .card:hover { transform: translateY(-5px); border-color: var(--accent-blue); }
+
+  .card-img {
+    background: #222;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-family: var(--font-head);
+    color: #444;
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .card-meta {
+    font-size: 11px;
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+
+  .price { font-weight: 700; color: #fff; }
+
+  .add-btn {
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the CORE ASSET Website</h1>
-    </header>
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>We are dedicated to providing the best assets.</p>
-        </section>
-        <section>
-            <h2>Services</h2>
-            <ul>
-                <li>Asset Management</li>
-                <li>Investment Counseling</li>
-                <li>Financial Planning</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 CORE ASSET. All rights reserved.</p>
-    </footer>
+
+<div class="top-notice">1,000's of Private Label Rights & Master Resell Rights Products</div>
+
+<nav>
+  <a href="#" class="logo">CORE<span style="color:var(--accent-blue)">ASSET</span></a>
+  <div class="search-container">
+    <input type="text" placeholder="Search eBooks, Articles, Software...">
+  </div>
+  <div style="font-size: 14px; font-weight: 600;">CART (0)</div>
+</nav>
+
+<div class="main-layout">
+  <aside class="sidebar">
+    <h3>CATEGORIES</h3>
+    <ul class="cat-list">
+      <li><a href="#">Artificial Intelligence</a></li>
+      <li><a href="#">Business Skills</a></li>
+      <li><a href="#">ChatGPT Prompts</a></li>
+      <li><a href="#">Cooking & Recipes</a></li>
+      <li><a href="#">Cryptocurrency</a></li>
+      <li><a href="#">Fitness & Exercise</a></li>
+      <li><a href="#">Make Money Online</a></li>
+      <li><a href="#">Self Improvement</a></li>
+      <li><a href="#">Social Media Marketing</a></li>
+      <li><a href="#">Website Templates</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="hero-banner">
+      <h1>BUY. REBRAND. RESELL.</h1>
+      <p>Download thousands of high-quality PLR and MRR products you can sell as your own. Keep 100% of the profits. Start your online business today.</p>
+      <button class="add-btn" style="padding: 12px 30px; font-size: 16px;">BROWSE DEALS</button>
+    </section>
+
+    <div class="section-title">
+      NEW RELEASES
+      <span style="font-size: 14px; color: var(--muted); cursor: pointer;">VIEW ALL ></span>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-img">AI COVER</div>
+        <div class="card-meta">PLR / MRR</div>
+        <div class="card-title">52 Weeks of Unstoppable AI Marketing</div>
+        <div class="card-footer">
+          <span class="price">$5.99</span>
+          <button class="add-btn">ADD TO CART</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">HUSTLE</div>
+        <div class="card-meta">PLR / MRR</div>
+        <div class="card-title">Hustle Smart: Modern Side Hustles 2026</div>
+        <div class="card-footer">
+          <span class="price">$7.99</span>
+          <button class="add-btn">ADD TO CART</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">SEO</div>
+        <div class="card-meta">PLR / MRR</div>
+        <div class="card-title">SEO Traffic Tricks Using AI Algorithms</div>
+        <div class="card-footer">
+          <span class="price">$5.99</span>
+          <button class="add-btn">ADD TO CART</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">CRYPTO</div>
+        <div class="card-meta">PLR / MRR</div>
+        <div class="card-title">The Beginner's Safe Investment Guide</div>
+        <div class="card-footer">
+          <span class="price">$5.99</span>
+          <button class="add-btn">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
 </body>
 </html>
